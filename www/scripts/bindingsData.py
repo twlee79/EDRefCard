@@ -52,6 +52,7 @@ supportedDevices = OrderedDict([
 ])
 
 _deviceAliases = {
+    '146B0606': 'XBox',
 }
 
 controls = {
