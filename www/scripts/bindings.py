@@ -380,7 +380,7 @@ def createBlockImage(supportedDeviceKey, strokeColor='Red', fillColor='LightGree
             maxFontSize = 40
 
             for keyDevice in supportedDevice.get('KeyDevices', supportedDevice.get('HandledDevices')):
-                for (keycode, box) in hotasDetails[keyDevice].items():
+                for (keycode, box) in HotasDetails(keyDevice).items():
                     if keycode == 'displayName':
                         continue
                     if not dryRun:        
@@ -455,7 +455,7 @@ def createHOTASImage(physicalKeys, modifiers, source, imageDevices, biggestFontS
                 texts = []
                 hotasDetail = None
                 try:
-                    hotasDetail = hotasDetails.get(itemDevice).get(itemKey)
+                    hotasDetail = HotasDetails(itemDevice).get(itemKey)
                 except AttributeError:
                     hotasDetail = None
                 if hotasDetail is None:
@@ -556,7 +556,7 @@ def createHOTASImage(physicalKeys, modifiers, source, imageDevices, biggestFontS
                         continue
 
                     modifierKey = keyModifier.get('Key')
-                    hotasDetail = hotasDetails.get(keyModifier.get('Device')).get(modifierKey)
+                    hotasDetail = HotasDetails(keyModifier.get('Device')).get(modifierKey)
                     if hotasDetail is None:
                         sys.stderr.write('%s: No location for %s\n' % (runId, modifierSpec))
                         continue
@@ -700,7 +700,7 @@ def printListItem(configObj):
         silencedControllers = ['Mouse', 'Keyboard']
         def displayName(controller):
             try:
-                return hotasDetails[controller]['displayName']
+                return HotasDetails(controller)['displayName']
             except:
                 return controller
         controllers = [displayName(controller) for controller in controllers if not controller in silencedControllers]

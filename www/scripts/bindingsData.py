@@ -51,6 +51,9 @@ supportedDevices = OrderedDict([
     ('Keyboard', {'Template': 'keyboard', 'HandledDevices': ['Keyboard']})
 ])
 
+_deviceAliases = {
+}
+
 controls = {
     # The 'HideIfSameAs' list is used to specify that a detailed binding such as 'SelectTarget_Buggy' need not be printed if the exact same button is bound to the more general version of that control (in that case 'SelectTarget').
     #
@@ -435,8 +438,12 @@ controls = {
     'CyclePreviousPage': {'Group': 'UI', 'Category': 'UI', 'Order': 11, 'Name': 'Prev Page', 'Type': 'Digital', 'HasAnalogue': False, 'HideIfSameAs': []},
 }
 
+def HotasDetails(name):
+    name = _deviceAliases.get(name, name)
+    return _hotasDetails[name]
+
 # default height is 54 (px)
-hotasDetails = {
+_hotasDetails = {
         '044F0400': {
         'displayName': 'HotasCougar',
         'Joy_1': {'Type': 'Digital', 'x': 2003, 'y': 557, 'width': 670}, # Primary trigger half press
