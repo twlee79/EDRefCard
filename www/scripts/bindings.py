@@ -364,7 +364,7 @@ def writeText(context, img, text, screenState, font, surround, newLine):
         screenState['currentX'] = screenState['currentX'] + width
 
 def createBlockImage(supportedDeviceKey, strokeColor='Red', fillColor='LightGreen', dryRun=False):
-    supportedDevice = supportedDevices[supportedDeviceKey]
+    supportedDevice = SupportedDevice(supportedDeviceKey)
     # Set up the path for our file
     templateName = supportedDevice['Template']
     config = Config(templateName)
@@ -737,7 +737,7 @@ def modeTitle(mode):
 def printDeviceList(mode):
     print('<div id="list"><h1>%s</h1></div>' % modeTitle(mode))
     print('<ul>')
-    devices = sorted(supportedDevices.keys())
+    devices = SupportedDeviceNames()
     for device in devices:
         print('<li><a href=device/%s>%s</a></li>' % (device, device))
     print('</ul>')
@@ -783,12 +783,14 @@ def printRefCard(config, public, createdImages, deviceForBlockImage, errors):
             else:
                 device = createdImage
                 deviceIndex = 0
+            templateName = SupportedDevice(device)['Template']
             if deviceIndex == 0:
-                print('<img width="100%%" src="../configs/%s/%s-%s.jpg"/><br/>' % (runId[:2], runId, supportedDevices[device]['Template']))
+                print('<img width="100%%" src="../configs/%s/%s-%s.jpg"/><br/>' % (runId[:2], runId, templateName))
             else:
-                print('<img width="100%%" src="../configs/%s/%s-%s-%s.jpg"/><br/>' % (runId[:2], runId, supportedDevices[device]['Template'], deviceIndex))
+                print('<img width="100%%" src="../configs/%s/%s-%s-%s.jpg"/><br/>' % (runId[:2], runId, templateName, deviceIndex))
         if deviceForBlockImage is not None:
-            print('<img width="100%%" src="../configs/%s/%s.jpg"/><br/>' % (supportedDevices[deviceForBlockImage]['Template'][:2], supportedDevices[deviceForBlockImage]['Template']))
+            templateName = SupportedDevice(deviceForBlockImage)['Template']
+            print('<img width="100%%" src="../configs/%s/%s.jpg"/><br/>' % (templateName[:2], templateName))
         if deviceForBlockImage is None and public is True:
             linkURL = config.refcardURL()
             bindsURL = config.bindsURL()

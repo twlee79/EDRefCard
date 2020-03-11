@@ -439,6 +439,13 @@ controls = {
     'CyclePreviousPage': {'Group': 'UI', 'Category': 'UI', 'Order': 11, 'Name': 'Prev Page', 'Type': 'Digital', 'HasAnalogue': False, 'HideIfSameAs': []},
 }
 
+def SupportedDevice(name):
+    name = _deviceAliases.get(name, name)
+    return supportedDevices[name]
+
+def SupportedDeviceNames():
+    return sorted(supportedDevices.keys());
+
 def HotasDetails(name):
     name = _deviceAliases.get(name, name)
     return _hotasDetails[name]
