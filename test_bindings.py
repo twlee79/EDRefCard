@@ -399,6 +399,12 @@ class ParserTests(TestCase):
         }
         self.maxDiff = None
         self.assertEqual(modifiers, expectedModifers)
+        
+    def testParseNacon(self):
+         path = self.testCasesPath / 'nacon.binds'
+         (result, errors) = bindings.parseLocalFile(path)
+         print(result, errors)
+        
 
 def setUpModule():
     scriptsPath = Path.cwd() / 'www/scripts'
