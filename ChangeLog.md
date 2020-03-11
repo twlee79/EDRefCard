@@ -1,3 +1,6 @@
+## 1.2.9
+* Added support for Nacon REVOLUTION Unlimited Pro Controller
+
 ## 1.2.8
 * Added support for VKB Kosmosima SCG Left and Right grips, courtesy of ajhewett.
 * Handled invalid keyboard bindings of the form `Device="Keyboard" Key=""`
