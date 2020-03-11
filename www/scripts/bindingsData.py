@@ -439,16 +439,17 @@ controls = {
     'CyclePreviousPage': {'Group': 'UI', 'Category': 'UI', 'Order': 11, 'Name': 'Prev Page', 'Type': 'Digital', 'HasAnalogue': False, 'HideIfSameAs': []},
 }
 
+def DealiasDevice(name):
+    return _deviceAliases.get(name, name)
+
 def SupportedDevice(name):
-    name = _deviceAliases.get(name, name)
-    return supportedDevices[name]
+    return supportedDevices[DealiasDevice(name)]
 
 def SupportedDeviceNames():
     return sorted(supportedDevices.keys());
 
 def HotasDetails(name):
-    name = _deviceAliases.get(name, name)
-    return _hotasDetails[name]
+    return _hotasDetails[DealiasDevice(name)]
 
 # default height is 54 (px)
 _hotasDetails = {

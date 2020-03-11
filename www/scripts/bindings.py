@@ -875,7 +875,9 @@ def parseBindings(runId, xml, displayGroups, errors):
         # Rewrite the device if this is a T16000M stick and we have a T16000M throttle
         if device == 'T16000M' and hasT16000MThrottle == True:
             device = 'T16000MFCS'
-
+        
+        device = DealiasDevice(device)
+        
         deviceIndex = xmlBinding.get('DeviceIndex', 0)
 
         key = xmlBinding.get('Key')
