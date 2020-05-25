@@ -402,8 +402,8 @@ class ParserTests(TestCase):
         
     def testParseNacon(self):
          path = self.testCasesPath / 'nacon.binds'
-         (result, errors) = bindings.parseLocalFile(path)
-         print(result, errors)
+         ((physicalKeys, modifiers, devices), errors) = bindings.parseLocalFile(path)
+         print((physicalKeys, modifiers, devices), errors)
         
 
 def setUpModule():
