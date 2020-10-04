@@ -2127,10 +2127,14 @@ hotasDetails = {
         'Joy_RXAxis': {'Type': 'Analogue', 'x': 732, 'y': 406, 'width': 639, 'height': 68}, # A1 Ministick R x
         'Joy_RYAxis': {'Type': 'Analogue', 'x': 732, 'y': 484, 'width': 639, 'height': 68}, # A1 Ministick R y
         'Joy_RZAxis': {'Type': 'Analogue', 'x': 2622, 'y': 2025, 'width': 671, 'height': 68}, # Twist R z
-        'Joy_POV1Up': {'Type': 'Digital', 'x': 1488, 'y': 561, 'width': 571, 'height': 68}, # A1 POV Switch up
-        'Joy_POV1Right': {'Type': 'Digital', 'x': 1488, 'y': 795, 'width': 571, 'height': 68}, # A1 POV Switch right
-        'Joy_POV1Down': {'Type': 'Digital', 'x': 1488, 'y': 638, 'width': 571, 'height': 68}, # A1 POV Switch down
-        'Joy_POV1Left': {'Type': 'Digital', 'x': 1488, 'y': 717, 'width': 571, 'height': 68}, # A1 POV Switch left
+        'Joy_15': {'Type': 'Digital', 'x': 1488, 'y': 561, 'width': 571, 'height': 68}, # A1 POV Switch up
+        'Joy_16': {'Type': 'Digital', 'x': 1488, 'y': 795, 'width': 571, 'height': 68}, # A1 POV Switch right
+        'Joy_17': {'Type': 'Digital', 'x': 1488, 'y': 638, 'width': 571, 'height': 68}, # A1 POV Switch down
+        'Joy_18': {'Type': 'Digital', 'x': 1488, 'y': 717, 'width': 571, 'height': 68}, # A1 POV Switch left
+        'Joy_20': {'Type': 'Digital', 'x': 1488, 'y': 875, 'width': 571, 'height': 68}, # A1 POV Switch press
+        'Joy_XAxis': {'Type': 'Analogue', 'x': 2371, 'y': 2131, 'width': 930, 'height': 54}, # X axis
+        'Joy_YAxis': {'Type': 'Analogue', 'x': 2371, 'y': 2188, 'width': 930, 'height': 54}, # Y axis
+
     },
 }
 
