@@ -576,6 +576,8 @@ hotasDetails = {
         'Joy_ZAxis': {'Type': 'Analogue', 'x': 84, 'y': 555, 'width': 572}, # Throttle
         'Joy_UAxis': {'Type': 'Analogue', 'x': 1874, 'y': 1914, 'width': 832}, # Pinky dial
         'Joy_RZAxis': {'Type': 'Analogue', 'x': 1954, 'y': 2054, 'width': 832}, # Paddle
+        'Joy_20': {'Type': 'Digital', 'x': 3284, 'y': 1714, 'width': 292, 'height': 108}, # Tempo
+        'Joy_21': {'Type': 'Digital', 'x': 3284, 'y': 1830, 'width': 292, 'height': 108}, # Double-tap
     },
     'SaitekFLY5': {
         'Joy_1': {'Type': 'Digital', 'x': 684, 'y': 794, 'width': 1092}, # Primary trigger
